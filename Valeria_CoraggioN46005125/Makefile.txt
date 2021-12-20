@@ -1,0 +1,10 @@
+CC=g++
+CFLAGS=-std=c++11
+DEPS= Geek.h Project.h Date.h Node.h LinkedList.h 
+OBJ=Driver.o Project.o Geek.o
+
+%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+	
+driver: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
